@@ -1,0 +1,11 @@
+/Users/duki/Desktop/CManager/src/CManager.Domain/bin/Debug/net10.0/CManager.Domain.deps.json
+/Users/duki/Desktop/CManager/src/CManager.Domain/bin/Debug/net10.0/CManager.Domain.dll
+/Users/duki/Desktop/CManager/src/CManager.Domain/bin/Debug/net10.0/CManager.Domain.pdb
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/CManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/CManager.Domain.AssemblyInfoInputs.cache
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/CManager.Domain.AssemblyInfo.cs
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/CManager.Domain.csproj.CoreCompileInputs.cache
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/CManager.Domain.dll
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/refint/CManager.Domain.dll
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/CManager.Domain.pdb
+/Users/duki/Desktop/CManager/src/CManager.Domain/obj/Debug/net10.0/ref/CManager.Domain.dll
