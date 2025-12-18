@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v10.0": {
       "CManager.Application/1.0.0": {
         "dependencies": {
-          "CManager.Domain": "1.0.0"
+          "CManager.Domain": "1.0.0",
+          "CManager.Infrastructure": "1.0.0"
         },
         "runtime": {
           "CManager.Application.dll": {}
@@ -17,6 +18,17 @@
       "CManager.Domain/1.0.0": {
         "runtime": {
           "CManager.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "CManager.Infrastructure/1.0.0": {
+        "dependencies": {
+          "CManager.Domain": "1.0.0"
+        },
+        "runtime": {
+          "CManager.Infrastructure.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -31,6 +43,11 @@
       "sha512": ""
     },
     "CManager.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CManager.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

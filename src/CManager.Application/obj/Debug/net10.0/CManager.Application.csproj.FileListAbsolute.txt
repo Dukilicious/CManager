@@ -14,3 +14,5 @@
 /Users/duki/Desktop/CManager/src/CManager.Application/obj/Debug/net10.0/refint/CManager.Application.dll
 /Users/duki/Desktop/CManager/src/CManager.Application/obj/Debug/net10.0/CManager.Application.pdb
 /Users/duki/Desktop/CManager/src/CManager.Application/obj/Debug/net10.0/ref/CManager.Application.dll
+/Users/duki/Desktop/CManager/src/CManager.Application/bin/Debug/net10.0/CManager.Infrastructure.dll
+/Users/duki/Desktop/CManager/src/CManager.Application/bin/Debug/net10.0/CManager.Infrastructure.pdb
