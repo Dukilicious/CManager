@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/CManager.Domain.dll": {}
         }
+      },
+      "CManager.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CManager.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CManager.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CManager.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../CManager.Domain/CManager.Domain.csproj",
       "msbuildProject": "../CManager.Domain/CManager.Domain.csproj"
+    },
+    "CManager.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../CManager.Infrastructure/CManager.Infrastructure.csproj",
+      "msbuildProject": "../CManager.Infrastructure/CManager.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "CManager.Domain >= 1.0.0"
+      "CManager.Domain >= 1.0.0",
+      "CManager.Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -53,6 +72,9 @@
           "projectReferences": {
             "/Users/duki/Desktop/CManager/src/CManager.Domain/CManager.Domain.csproj": {
               "projectPath": "/Users/duki/Desktop/CManager/src/CManager.Domain/CManager.Domain.csproj"
+            },
+            "/Users/duki/Desktop/CManager/src/CManager.Infrastructure/CManager.Infrastructure.csproj": {
+              "projectPath": "/Users/duki/Desktop/CManager/src/CManager.Infrastructure/CManager.Infrastructure.csproj"
             }
           }
         }
