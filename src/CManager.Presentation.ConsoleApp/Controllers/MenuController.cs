@@ -64,7 +64,7 @@ public class MenuController(ICustomerService customerService)
 
         if (result)
         {
-            Console.WriteLine("Customer created")
+            Console.WriteLine("Customer created");
             Console.WriteLine($"{firstName} {lastName}");
         }
         else
@@ -104,6 +104,105 @@ public class MenuController(ICustomerService customerService)
             }
         }
 
+        OutputDialog("Press any key to continue...");
+    }
+
+    
+    private void DeleteCustomer()
+    {
+        Console.ReadKey();
+        Console.WriteLine("Delete Customer");
+
+        var customers = _customerService.GetAllCustomers(out bool hasError).ToList();
+
+        if (hasError)
+        {
+            Console.WriteLine("Something went wrong, please try again later");
+        }
+
+        if (!customers.Any())
+        {
+            Console.WriteLine("No customers found");
+        }
+        else
+        {
+            while (true)
+            {
+                for (int i = 0; i < customers.Count; i++)
+                {
+                    var customer = customers[i];
+                    Console.WriteLine($"[{i + 1}] {customer.FirstName} {customer.LastName} {customer.Email}");
+                }
+
+                Console.WriteLine("[0] Go back to menu");
+                Console.WriteLine("Enter customer number you wish to delete: ");
+                var input = Console.ReadLine();
+
+                if (!int.TryParse(input, out int choice))
+                {
+                    OutputDialog("Not a valid number! Press any key to try again...");
+                    continue;
+                }
+
+                if (choice == 0)
+                {
+                    return;
+                }
+
+                if (choice > customers.Count)
+                {
+                    Console.WriteLine($"Number must be between 1 and {customers.Count}. Press any key to try again...");
+                    Console.ReadKey();
+                    continue;
+                }
+
+                var index = choice - 1;
+                var selectedCustomer = customers[index];
+
+                Console.WriteLine("You have selected: ");
+                Console.WriteLine($"{selectedCustomer.FirstName} {selectedCustomer.LastName} {selectedCustomer.Email}");
+
+                while (true)
+                {
+                    Console.WriteLine("Are you sure you want to delete this customer? ([y]=Yes / [n]=No)");
+                    var confirmation = Console.ReadLine()!.ToLower();
+
+                    if (confirmation == "y")
+                    {
+                        Console.WriteLine("Confirm by entering customers email address");
+                        Console.WriteLine($"Customer {selectedCustomer.FirstName} {selectedCustomer.LastName}");
+                        Console.WriteLine($"{selectedCustomer.Email}");
+                        Console.Write("Enter customer email address to delete: ");
+                        var deleteInput = Console.ReadLine();
+
+                        if (deleteInput == selectedCustomer.Email)
+                        {
+                            var result = _customerService.DeleteCustomer(selectedCustomer.Id);
+                            if (result)
+                            {
+                                OutputDialog("Customer was removed, press any key to go back...");
+                                return;
+                            }
+                            else
+                            {
+                                OutputDialog("Something went wrong, please contact support. Press any key to continue...");
+                                return;
+                            }
+                        }
+                        else if (confirmation == "n")
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            OutputDialog("Please enter 'y' for Yes or 'n' for No. Press any key to continue...");
+                            continue;
+                        }
+                    }
+                }
+            }
+        }
+    
         OutputDialog("Press any key to continue...");
     }
 
