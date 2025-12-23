@@ -110,7 +110,7 @@ public class MenuController(ICustomerService customerService)
     
     private void DeleteCustomer()
     {
-        Console.ReadKey();
+        Console.Clear();
         Console.WriteLine("Delete Customer");
 
         var customers = _customerService.GetAllCustomers(out bool hasError).ToList();
@@ -128,6 +128,8 @@ public class MenuController(ICustomerService customerService)
         {
             while (true)
             {
+                Console.Clear();
+
                 for (int i = 0; i < customers.Count; i++)
                 {
                     var customer = customers[i];
@@ -140,6 +142,7 @@ public class MenuController(ICustomerService customerService)
 
                 if (!int.TryParse(input, out int choice))
                 {
+                    Console.Clear();
                     OutputDialog("Not a valid number! Press any key to try again...");
                     continue;
                 }
@@ -151,6 +154,7 @@ public class MenuController(ICustomerService customerService)
 
                 if (choice > customers.Count)
                 {
+                    Console.Clear();
                     Console.WriteLine($"Number must be between 1 and {customers.Count}. Press any key to try again...");
                     Console.ReadKey();
                     continue;
@@ -159,19 +163,20 @@ public class MenuController(ICustomerService customerService)
                 var index = choice - 1;
                 var selectedCustomer = customers[index];
 
-                Console.WriteLine("You have selected: ");
-                Console.WriteLine($"{selectedCustomer.FirstName} {selectedCustomer.LastName} {selectedCustomer.Email}");
 
                 while (true)
                 {
+                    Console.Clear();
+                    Console.WriteLine("You have selected: ");
+                    Console.WriteLine($"{selectedCustomer.FirstName} {selectedCustomer.LastName} {selectedCustomer.Email}");
                     Console.WriteLine("Are you sure you want to delete this customer? ([y]=Yes / [n]=No)");
                     var confirmation = Console.ReadLine()!.ToLower();
 
                     if (confirmation == "y")
                     {
-                        Console.WriteLine("Confirm by entering customers email address");
-                        Console.WriteLine($"Customer {selectedCustomer.FirstName} {selectedCustomer.LastName}");
-                        Console.WriteLine($"{selectedCustomer.Email}");
+                        Console.Clear();
+                        Console.WriteLine($"Customer name: {selectedCustomer.FirstName} {selectedCustomer.LastName}");
+                        Console.WriteLine($"Customer email: {selectedCustomer.Email}");
                         Console.Write("Enter customer email address to delete: ");
                         var deleteInput = Console.ReadLine();
 
@@ -185,19 +190,27 @@ public class MenuController(ICustomerService customerService)
                             }
                             else
                             {
+                                Console.Clear();
                                 OutputDialog("Something went wrong, please contact support. Press any key to continue...");
                                 return;
                             }
                         }
-                        else if (confirmation == "n")
-                        {
-                            return;
-                        }
                         else
                         {
-                            OutputDialog("Please enter 'y' for Yes or 'n' for No. Press any key to continue...");
-                            continue;
+                            Console.Clear();
+                            OutputDialog("Email did not match, Press any key to try again.");
+                            break;
                         }
+                    }
+                    else if (confirmation == "n")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        OutputDialog("Please enter 'y' for Yes or 'n' for No. Press any key to continue...");
+                        continue;
                     }
                 }
             }

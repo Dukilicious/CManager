@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "9eb6402e-07e8-493e-900f-0db390696863",
+    "FirstName": "pelle",
+    "LastName": "pellesson",
+    "Email": "pelle@domain.se",
+    "PhoneNumber": "13423525235",
+    "Address": {
+      "StreetAddress": "pellegatan 15",
+      "PostalCode": "12345",
+      "City": "pellestad"
+    }
+  },
+  {
+    "Id": "3065dd27-8b46-416f-8776-5f22591f42c6",
+    "FirstName": "karen",
+    "LastName": "blabla",
+    "Email": "karen@domain.com",
+    "PhoneNumber": "3535252",
+    "Address": {
+      "StreetAddress": "fiolgatan 65",
+      "PostalCode": "345345",
+      "City": "goteborg"
+    }
+  },
+  {
+    "Id": "0e3619ce-320b-4128-ad69-ed5173ed491c",
+    "FirstName": "anna",
+    "LastName": "annesson",
+    "Email": "anna@domain.com",
+    "PhoneNumber": "22384394",
+    "Address": {
+      "StreetAddress": "mus gatan 123",
+      "PostalCode": "25252",
+      "City": "ingstad"
+    }
+  },
+  {
+    "Id": "3e2507b0-20c7-4d5b-a8c7-ba80ec9bcb63",
+    "FirstName": "amanda",
+    "LastName": "svensson",
+    "Email": "amanda@domain.com",
+    "PhoneNumber": "234782374",
+    "Address": {
+      "StreetAddress": "tjejgatan 420",
+      "PostalCode": "24234",
+      "City": "goteborg"
+    }
+  }
+]
