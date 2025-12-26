@@ -67,9 +67,10 @@ public class CustomerService(ICustomerRepo customerRepo) : ICustomerService
             
             return customer;
         }
-        catch
+        catch(Exception ex)
         {
             hasError = true;
+            Console.WriteLine($"Error searching for customer: {ex.Message}");
             return null;
         }
     }
