@@ -54,6 +54,27 @@ public class CustomerService(ICustomerRepo customerRepo) : ICustomerService
     }
 
 
+    public CustomerModel? GetCustomerByEmail(string email, out bool hasError)
+    {
+        hasError = false;
+
+        try
+        {
+            var customers = _customerRepo.GetAllCustomers();
+
+            // (Code row 66 is AI generated)
+            var customer = customers.FirstOrDefault(c => c.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+            
+            return customer;
+        }
+        catch
+        {
+            hasError = true;
+            return null;
+        }
+    }
+
+
     public bool DeleteCustomer(Guid id)
     {
         try

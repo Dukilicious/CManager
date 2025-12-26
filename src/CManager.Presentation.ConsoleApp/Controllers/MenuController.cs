@@ -107,6 +107,12 @@ public class MenuController(ICustomerService customerService)
         OutputDialog("Press any key to continue...");
     }
 
+
+    private void SearchCustomer()
+    {
+    
+    }
+
     
     private void DeleteCustomer()
     {
