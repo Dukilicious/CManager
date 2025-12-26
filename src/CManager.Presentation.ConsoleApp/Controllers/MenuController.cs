@@ -15,7 +15,8 @@ public class MenuController(ICustomerService customerService)
             Console.WriteLine("Customer Manager");
             Console.WriteLine("1. Create Customer");
             Console.WriteLine("2. View All Customers");
-            Console.WriteLine("3. Delete Customer");
+            Console.WriteLine("3. Search Customer");
+            Console.WriteLine("4. Delete Customer");
             Console.WriteLine("0. Exit");
             Console.Write("Choose Option: ");
 
@@ -31,8 +32,12 @@ public class MenuController(ICustomerService customerService)
                 case "2":
                     ViewAllCustomers();
                     break;
-
+                
                 case "3":
+                    FindCustomerByEmail();
+                    break;
+
+                case "4":
                     DeleteCustomer();
                     break;
                 
@@ -108,9 +113,16 @@ public class MenuController(ICustomerService customerService)
     }
 
 
-    private void SearchCustomer()
+    private void FindCustomerByEmail()
     {
-    
+        Console.Clear();
+        Console.Write("Enter email to find customer: ");
+
+        // Code Row 122 is AI Generated
+        var email = InputHelper.ValidateInput("Email", ValidationType.Email);
+
+        var customer = _customerService.GetCustomerByEmail(email, out bool hasError);
+        
     }
 
     
