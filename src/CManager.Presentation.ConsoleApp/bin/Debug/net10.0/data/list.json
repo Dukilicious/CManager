@@ -46,5 +46,17 @@
       "PostalCode": "24234",
       "City": "goteborg"
     }
+  },
+  {
+    "Id": "bdbb23cb-58b2-4d1d-aff7-1dfcebd9ccf0",
+    "FirstName": "Jerry",
+    "LastName": "McGregor",
+    "Email": "Jerry@domain.com",
+    "PhoneNumber": "23432342",
+    "Address": {
+      "StreetAddress": "Mc",
+      "PostalCode": "24321",
+      "City": "Dublin"
+    }
   }
 ]

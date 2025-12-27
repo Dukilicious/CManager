@@ -116,13 +116,34 @@ public class MenuController(ICustomerService customerService)
     private void FindCustomerByEmail()
     {
         Console.Clear();
-        Console.Write("Enter email to find customer: ");
 
-        // Code Row 122 is AI Generated
-        var email = InputHelper.ValidateInput("Email", ValidationType.Email);
+        // Code Row 121 is AI Generated
+        var email = InputHelper.ValidateInput("Enter Email To Find Customer", ValidationType.Email);
 
         var customer = _customerService.GetCustomerByEmail(email, out bool hasError);
-        
+
+        if (hasError)
+        {
+            Console.Clear();
+            Console.WriteLine("Something went wrong, please try again later");
+        }
+
+        if (customer == null)
+        {
+            Console.Clear();
+            Console.WriteLine("Customer not found");
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine($"Name: {customer.FirstName} {customer.LastName}");
+            Console.WriteLine($"Email: {customer.Email}");
+            Console.WriteLine($"Phone: {customer.PhoneNumber}");
+            Console.WriteLine($"Address: {customer.Address.StreetAddress} {customer.Address.PostalCode} {customer.Address.City}");
+            Console.WriteLine($"ID: {customer.Id}");
+        }
+
+        OutputDialog("Press any key to continue...");
     }
 
     
@@ -186,16 +207,17 @@ public class MenuController(ICustomerService customerService)
                 {
                     Console.Clear();
                     Console.WriteLine("You have selected: ");
-                    Console.WriteLine($"{selectedCustomer.FirstName} {selectedCustomer.LastName} {selectedCustomer.Email}");
+                    Console.WriteLine($"Name: {selectedCustomer.FirstName} {selectedCustomer.LastName}");
+                    Console.WriteLine($"Email: {selectedCustomer.Email}");
                     Console.WriteLine("Are you sure you want to delete this customer? ([y]=Yes / [n]=No)");
                     var confirmation = Console.ReadLine()!.ToLower();
 
                     if (confirmation == "y")
                     {
                         Console.Clear();
-                        Console.WriteLine($"Customer name: {selectedCustomer.FirstName} {selectedCustomer.LastName}");
-                        Console.WriteLine($"Customer email: {selectedCustomer.Email}");
-                        Console.Write("Enter customer email address to delete: ");
+                        Console.WriteLine($"Customer Name: {selectedCustomer.FirstName} {selectedCustomer.LastName}");
+                        Console.WriteLine($"Customer Email: {selectedCustomer.Email}");
+                        Console.Write("Enter email address to delete customer: ");
                         var deleteInput = Console.ReadLine();
 
                         if (deleteInput == selectedCustomer.Email)
