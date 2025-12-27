@@ -62,7 +62,7 @@ public class CustomerService(ICustomerRepo customerRepo) : ICustomerService
         {
             var customers = _customerRepo.GetAllCustomers();
 
-            // (Code row 66 is AI generated)
+            // Code below (Line 66) is AI generated (Looks through the list of customers to find the first one that matches the given email, ignoring upper and lower case)
             var customer = customers.FirstOrDefault(c => c.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
             
             return customer;

@@ -117,7 +117,7 @@ public class MenuController(ICustomerService customerService)
     {
         Console.Clear();
 
-        // Code Row 121 is AI Generated
+        // Code below (Line 121) is AI Generated (Validates email input from user, stored in variable: "email" if input is valid)
         var email = InputHelper.ValidateInput("Enter Email To Find Customer", ValidationType.Email);
 
         var customer = _customerService.GetCustomerByEmail(email, out bool hasError);
